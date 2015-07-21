@@ -28,8 +28,8 @@
      function findDistinctValues(values) {
          // FILL THIS IN
          var set = new Set();
-         for(var i in values) {
-            set.add(i);
+         for(var i =0; i < values.length; i++) {
+            set.add(values[i]);
          }
          return set;
      }
@@ -60,12 +60,12 @@
      function removeFruits(fruits, fruitsToRemove) {
          // FILL THIS IN
          for(var i = 0; i < fruits.length; i++) {
-            for(var j in fruitsToRemove) {
-                if(fruits[i] == j) {
+            for(var j = 0; j < fruitsToRemove.length; j++) {
+                if(fruits[i] == fruitsToRemove[j]) {
                     fruits.splice(i,1);
                 }
             }
-         }
+         } return fruits;
      }
 
      // Write a function to push either a simple value or an array of values onto a specified array.
@@ -76,8 +76,8 @@
          // FILL THIS IN
          if(array != undefined && array != null) {
             if(Array.isArray(toPush)) {
-                for(var i in toPush) {
-                    array.push(i);
+                for(var i = 0; i < toPush.length; i++) {
+                    array.push(toPush[i]);
                 }
             } else {
                 array.push(toPush);
@@ -98,18 +98,18 @@
      // Write a function that will take any number of arguments and return their sum
      function sum() {
          // FILL THIS IN
-         var args = Array.prototype.slice.call(arguments);
-         var sum = 0;
-         for(i in args) {
-            sum = sum + i;
+        var args = Array.prototype.slice.call(arguments)[0];
+        var total = 0; 
+         for(var i=0; i < args.length; i++) {
+            total = total + (args[i]);
          }
-         return sum; 
+         return total; 
      }
 
      // Write a function that will return true if a specified string consists of only whitespace.
      function isOnlyWhitespace(sourceStr) {
          // FILL THIS IN
-         return /\S/.test(sourceStr);
+         return !/\S/.test(sourceStr);
      }
 
      // write an example of a javascript closure
